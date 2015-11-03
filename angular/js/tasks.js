@@ -18,6 +18,8 @@ angular.module('Tasks', [])
 
         //add a function to add newTask to the array
         $scope.addTask = function() {
+
+
             //push the current value of newTask into the tasks array
             $scope.tasks.push($scope.newTask);
 
