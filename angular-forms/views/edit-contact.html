@@ -1,6 +1,6 @@
 <h1>Edit {{contact.fname}} {{contact.lname}}</h1>
 
-<form name="contactForm" novalidate ng-submit="save()">
+<form name="contactForm" novalidate ng-submit="saveContact()">
     <div class="form-group">
         <label for="fnameImp">First Name:</label>
         <input type="text" class="form-control" id="fnameImp"
@@ -15,17 +15,40 @@
     </div>
     <div class="form-group">
         <label for="phoneImp">Phone Number:</label>
-        <input type="text" class="form-control" id="phoneImp"
+        <input type="tel" class="form-control" id="phoneImp"
                name="phoneImp" ng-model="contact.phone"
-                pattern="\d{3}-\d{3}-\d{4}"/>
-        <p class="validation-error"
-           ng-if="contactForm.phoneImp.$error.required">Phone must be XXX-XXX-XXXX</p>
+               placeholder="phone number"
+               required pattern="\d{3}-\d{3}-\d{4}"/>
+        <p class="validation-error" ng-if="contactForm.phoneImp.$error.required">
+            A Phone number is required
+        </p>
+        <p class="validation-error" ng-if="contactForm.phoneImp.$error.pattern">
+            Phone must be XXX-XXX-XXXX
+        </p>
     </div>
     <div class="form-group">
         <label for="fnameImp">Birthdate:</label>
-        <input type="text" class="form-control" id="dobImp"
-               name="dobImp" ng-model="contact.dob"/>
+        <input type="text" class="form-control" id="dobImp" name="dobImp"
+               ng-model="contact.dob" placeholder="date of birth" in-the-past />
+        <p class="validation-error" ng-if="contactForm.dobImp.$error.inThePast">
+            Date of birth must be in the past
+        </p>
     </div>
+    <div class="form-group">
+        <label for="shoeImp">Shoe Size:</label>
+        <input type="number" class="form-control" id="shoeImp" name="shoeImp"
+               ng-model="contact.shoeSize" required min="4" max="17" step="0.5">
+        <p class="validation-error" ng-if="contactForm.shoeImp.$error.min">
+            Shoe size must be at least 4
+        </p>
+        <p class="validation-error" ng-if="contactForm.shoeImp.$error.max">
+            Shoe size must be less than 18
+        </p>
+        <p class="validation-error" ng-if="contactForm.shoeImp.$error.required">
+            Shoe size is required
+        </p>
+    </div>
+
     <div class="form-group">
         <a class="btn btn-default" ui-sref="list">Cancel</a>
         <button type="submit" class="btn btn-default"
