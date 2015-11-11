@@ -78,3 +78,18 @@ angular.module('ChatApp', ['firebase'])
         }; //sendMessage()
 
     }); //ChatController
+
+
+/*{
+    "rules": {
+        ".read": true,
+        ".write": "auth != null",
+        "messages": {
+            "$message": {
+                "body": {
+                    ".validate": "newData.val().length < 140"
+                }
+            }
+        }
+    }
+}*/
