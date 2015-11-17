@@ -13,6 +13,14 @@ angular.module('TasksApp', [])
             $scope.newTaskForm.titleInp.$setPristine();
         };
 
+        function addMultipleTasks(num) {
+            var idx;
+
+            for(idx = 0; idk < num; ++idx) {
+                addTask('Task ' + idx);
+            }
+        }
+
         $scope.toggleDone = function(task) {
             task.done = !task.done;
         };
