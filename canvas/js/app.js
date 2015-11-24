@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return true;
     } //step()
 
-    //advance teh animation and redraw
+    //advance the animation and redraw
     function animate(timestamp) {
         var keepGoing = true;
         render();
