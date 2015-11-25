@@ -1,0 +1,64 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+#map {
+    height: 100%;
+}
+
+#legend {
+    padding-left: 5em;
+    padding-right: 5em;
+    padding-bottom: 1em;
+    padding-top: 0.5em;
+    position: absolute;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    top:0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 71, 0.8);
+    color: #FFFFFF;
+}
+
+#SDOT-name {
+    color: #FF0000;
+}
+
+#WSDOT-name {
+    color: #008000;
+}
+
+#input {
+    width: 60%;
+}
+
+h1, h2 {
+    margin: 0.5em;
+    padding: 0;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+button {
+    margin-top: 1em;
+}
+
+#popup-image {
+    width: 250px;
+}
